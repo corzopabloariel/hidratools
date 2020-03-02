@@ -1,0 +1,353 @@
+:root {
+    --ms: 500ms;
+    --logo-width: 315px;
+}
+header {
+    color: var( --white );
+
+    font-family: var( --header-font-family );
+    font-size: var( --header-font-size );
+    font-weight: var( --header-font-weigth );
+    line-height: var( --header-line-heigth );
+    letter-spacing: var( --header-letter-spacing );
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+header .social-networks {
+    font-size: 20px;
+    color: var( --color-primary );
+}
+header .btn.btn-outline-warning {
+    border-color: var( --color-primary );
+    color: var( --color-primary );
+}
+header .btn[aria-expanded="true"],
+header .btn.btn-outline-warning:hover {
+    background-color: var( --color-primary );
+    color: var( --white );
+}
+
+header nav > .container > div {
+    overflow-x: auto;
+}
+
+header .btn.btn-outline-success.whatsapp {
+    font-weight: bold;
+    color: var( --white );
+    background: var( --color-primary );
+    border-color: var( --color-primary );
+}
+header .btn.btn-outline-success.whatsapp:hover {
+    color: var( --white );
+    background-color: #108d7b;
+    border-color: #108d7b;
+}
+header nav {
+    background-color: var( --nav-background);
+    font-family: var( --nav-font-family );
+    font-size: var( --nav-font-size );
+    font-weight: var( --nav-font-weigth );
+    line-height: var( --nav-line-heigth );
+    letter-spacing: var( --nav-letter-spacing );
+    white-space: nowrap;
+}
+header a,
+header a:hover {
+    color: inherit;
+}
+header .menu a {
+    display: block;
+    text-align: center;
+    padding: 1em .7em;
+    text-transform: uppercase;
+}
+header .menu a > span {
+    -webkit-transition: all var( --ms ) ease;
+    -moz-transition: all var( --ms ) ease;
+    -ms-transition: all var( --ms ) ease;
+    -o-transition: all var( --ms ) ease;
+    transition: all var( --ms ) ease;
+    position: relative;
+}
+header .menu a span::before {
+    height: 2px;
+    background-color: var( --color-primary );
+    width: 0;
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all var( --ms ) ease;
+    -moz-transition: all var( --ms ) ease;
+    -ms-transition: all var( --ms ) ease;
+    -o-transition: all var( --ms ) ease;
+    transition: all var( --ms ) ease;
+}
+header .menu a:hover,
+header .menu a.active {
+    position: relative;
+    text-decoration: none;
+}
+header .menu a:hover span::before,
+header .menu a.active span::before {
+    width: 100%;
+}
+header .navbar-brand img {
+    width: var( --logo-width );
+    height: auto;
+}
+
+header #hamburger,
+header #hamburger-,
+header #buscador,
+#menu-buscador {
+    display: none !important;
+}
+header .buscar {
+    color: var( --color ) !important;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+    position: absolute !important;
+    right: 10px;
+}
+header .buscar-header {
+    margin-left: 1em;
+    position: relative;
+}
+header .buscar-header input {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var( --color );
+    color: transparent;
+	cursor: pointer;
+    -webkit-transition: all var( --ms ) ease;
+    -moz-transition: all var( --ms ) ease;
+    -ms-transition: all var( --ms ) ease;
+    -o-transition: all var( --ms ) ease;
+    transition: all var( --ms ) ease;
+}
+header .buscar-header input:hover {
+    background-color: transparent;
+    -webkit-transition: all var( --ms ) ease;
+    -moz-transition: all var( --ms ) ease;
+    -ms-transition: all var( --ms ) ease;
+    -o-transition: all var( --ms ) ease;
+    transition: all var( --ms ) ease;
+}
+header .buscar-header input:focus {
+    border-radius: 0;
+	width: 130px;
+	background-color: transparent;
+    cursor: auto;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-transition: all var( --ms ) ease;
+    -moz-transition: all var( --ms ) ease;
+    -ms-transition: all var( --ms ) ease;
+    -o-transition: all var( --ms ) ease;
+    transition: all var( --ms ) ease;
+}
+header .buscar-header input:-moz-placeholder {
+	color: var( --white );
+}
+header .buscar-header input::-webkit-input-placeholder {
+	color: var( --white );
+}
+header .buscar-header input:focus:-moz-placeholder {
+	color: var( --color-2D2D2D );
+}
+header .buscar-header input:focus::-webkit-input-placeholder {
+	color: var( --color-2D2D2D );
+}
+
+header #buscador input:focus {
+    width: 230px;
+}
+
+
+/* hang burger */
+.hamburger {
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+}
+.hamburger > div {
+    height: 40px;
+}
+  
+.hamburger:hover span:nth-child(1) {
+    top: -4px;
+    -webkit-transition: .20s ease-in-out;
+    -moz-transition: .20s ease-in-out;
+    -o-transition: .20s ease-in-out;
+    transition: .20s ease-in-out;
+}
+  
+.hamburger:hover span:nth-child(3) {
+    top: 34px;
+    -webkit-transition: .16s ease-in-out;
+    -moz-transition: .16s ease-in-out;
+    -o-transition: .16s ease-in-out;
+    transition: .16s ease-in-out;
+}
+  
+.hamburger span {
+    z-index: 3;
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var( --white );
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .20s ease-in-out;
+    -moz-transition: .20s ease-in-out;
+    -o-transition: .20s ease-in-out;
+    transition: .25s ease-in-out;
+}
+  
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+  
+.hamburger span:nth-child(2) {
+    top: 14px;
+}
+  
+.hamburger span:nth-child(3) {
+    top: 28px;
+}
+  
+.hamburger.open span:nth-child(1) {
+    top: 14px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    background-color: var( --white );
+}
+  
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+    -webkit-transition: .16s ease-in-out;
+    -moz-transition: .16s ease-in-out;
+    -o-transition: .16s ease-in-out;
+    transition: .16s ease-in-out;
+}
+  
+.hamburger.open span:nth-child(3) {
+    top: 14px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    background-color: var( --white );
+}
+.isDisabled .hamburger.open span {
+    background: transparent;
+}
+@media (max-width: 991px) {
+    header #hamburger,
+    header #hamburger-,
+    header #buscador,
+    #menu-buscador {
+        display: block !important;
+    }
+    header #hamburger- {
+        position: absolute !important;
+        left: -40px;
+    }
+}
+@media (max-width: 576px) {
+    header img {
+        width: calc( 99% - 50px);
+    }
+}
+/*******************
+ *      MENU
+ *******************/
+#wrapper-menu {
+    width: 300px;
+    right: -300px;
+    height: 100vh;
+    top: 0;
+    z-index: 1;
+    border-left: 2px solid var( --color );
+    background-color: #000;
+    color: var( --white );
+
+    font-family: var( --header-font-family );
+    font-size: var( --header-font-size );
+    font-weight: var( --header-font-weigth );
+    line-height: var( --header-line-heigth );
+    letter-spacing: var( --header-letter-spacing );
+}
+#wrapper-menu .close-menu {
+    position: absolute;
+    font-size: 2em;
+    line-height: 2em;
+    font-weight: 600;
+    width: 50px;
+    cursor: pointer;
+    height: 50px;
+    right: -50px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var( --white );
+    background-color: var( --color-F3F3F3 );
+}
+#wrapper-menu .close-menu + div {
+    background-color: var( --color-F3F3F3 );
+}
+#wrapper-menu img {
+    width: 70%;
+    display: block;
+    margin: .6em auto;
+}
+#wrapper-menu a {
+    color: inherit;
+}
+#wrapper-menu .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#wrapper-menu .list-group {
+    font-size: inherit;
+}
+#wrapper-menu .list-group .list-group-item:first-child() {
+    border-top: none;
+}
+#wrapper-menu a.active {
+    background-color: var( --color-E30613 );
+}
+@media (max-width: 991px) {
+    header .buscador .col-12 {
+        margin-top: .75em;
+        margin-bottom: .75em;
+    }
+}
+@media (max-width: 425px) {
+    header .navbar-brand img {
+        width: calc( 100% - 25px );
+    }
+}
+@media (max-width: 349px) {
+    #wrapper-menu .close-menu {
+        right: 0;
+    }
+}

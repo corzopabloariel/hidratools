@@ -1,0 +1,253 @@
+:root {
+    --color-primary: #F4BF49;
+    --color-primary-dark: #7E90A1;
+    --color-secondary: #505050;
+    --color-gray: #163A8F;
+    --color-gray-dark: #6E6F71;
+    --color-light: #C8C8C8;
+    
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semibold: 600;
+    --bold: 700;
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'IBM Plex Sans', sans-serif;
+
+    --osole-letter-spacing: 1.2px;
+    --osole-font-size: 13px;
+    --osole-line-height: 27px;
+    --osole-font-weight: var( --regular );
+    --osole-color: #DFDFDF;
+    --osole-font-family: var( --font-secondary );
+    
+    --slider-font-size-1: 22px;
+    --slider-letter-spacing-1: 0;
+    --slider-font-weight-1: var( --medium );
+    --slider-line-height-1: 40px;
+    --slider-color-1: var( --white );
+    --slider-font-family-1: var( --font-primary );
+    --slider-font-size-2: 40px;
+    --slider-letter-spacing-2: .68px;
+    --slider-font-weight-2: var( --bold  );
+    --slider-line-height-2: 45px;
+    --slider-color-2: var( --white );
+    --slider-font-family-2: var( --font-primary );
+
+    --empresa-letter-spacing: 0;
+    --empresa-font-size: 15px;
+    --empresa-line-height: 28px;
+    --empresa-font-weight: 400;
+    --empresa-color: var( --color-secondary );
+    --empresa-font-family: var( --font-primary );
+    --empresa-title-letter-spacing: 0;
+    --empresa-title-font-size: 32px;
+    --empresa-title-line-height: 39px;
+    --empresa-title-font-weight: var( --medium );
+    --empresa-title-color: var( --color-secondary );
+    --empresa-title-font-family: var( --font-primary );
+
+    --servicio-title-letter-spacing: 0;
+    --servicio-title-font-size: 16px;
+    --servicio-title-line-height: 20px;
+    --servicio-title-font-weight: var( --bold );
+    --servicio-title-color: var( --white );
+    --servicio-title-font-family: var( --font-primary );
+    --servicio-title-background: var( --color-primary );
+
+    --servicio-letter-spacing: 0;
+    --servicio-font-size: 15px;
+    --servicio-line-height: 28px;
+    --servicio-font-weight: var( --regular );
+    --servicio-color: var( --color-secondary );
+    --servicio-font-family: var( --font-primary );
+    --servicio-title-i-font-size: 40px;
+
+    --home-icono-letter-spacing: 0;
+    --home-icono-font-size: 16px;
+    --home-icono-line-height: 20px;
+    --home-icono-font-weight: var( --bold );
+    --home-icono-color: var( --color-secondary );
+    --home-icono-font-family: var( --font-primary );
+    --home-icono-title-letter-spacing: .85px;
+    --home-icono-title-font-size: 15px;
+    --home-icono-title-line-height: 39px;
+    --home-icono-title-font-weight: var( --bold );
+    --home-icono-title-color: var( --color-secondary );
+    --home-icono-title-font-family: var( --font-primary );
+
+    --footer-background: #191818;
+    --footer-font-family: var( --font-secondary );
+    --footer-font-color: #DFDFDF;
+    --footer-font-size: 15px;
+    --footer-line-height: 25px;
+    --footer-letter-spacing: .8px;
+    --footer-font-weight: var( --regular );
+    --footer-title-font-family: var( --font-secondary );
+    --footer-title-font-color: var( --color-primary );
+    --footer-title-font-size: 15px;
+    --footer-title-line-height: 25px;
+    --footer-title-letter-spacing: .8px;
+    --footer-title-font-weight: var( --regular );
+
+    --nav-background: #191818;
+    --nav-font-family: var( --font-primary );
+    --nav-font-size: 15px;
+    --nav-font-weigth: var( --regular );
+    --nav-line-heigth: 16px;
+    --nav-letter-spacing: 1.1px;
+
+    --contacto-letter-spacing: 0;
+    --contacto-font-size: 15px;
+    --contacto-line-height: 28px;
+    --contacto-font-weight: var( --regular );
+    --contacto-color: var( --color-secondary );
+    --contacto-font-family: var( --font-primary );
+    --contacto-title-letter-spacing: 0;
+    --contacto-title-font-size: 16px;
+    --contacto-title-line-height: 20px;
+    --contacto-title-font-weight: var( --bold );
+    --contacto-title-color: var( --color-secondary );
+    --contacto-title-font-family: var( --font-primary );
+    --contacto-name-letter-spacing: 0;
+    --contacto-name-font-size: 20px;
+    --contacto-name-line-height: 39px;
+    --contacto-name-font-weight: var( --bold );
+    --contacto-name-color: var( --color-secondary );
+    --contacto-name-font-family: var( --font-primary );
+
+    --video-letter-spacing: 0;
+    --video-font-size: 16px;
+    --video-line-height: 20px;
+    --video-font-weight: var( --regular );
+    --video-color: var( --color-secondary );
+    --video-font-family: var( --font-primary );
+    --video-title-letter-spacing: 0;
+    --video-title-font-size: 20px;
+    --video-title-line-height: 39px;
+    --video-title-font-weight: var( --bold );
+    --video-title-color: var( --color-secondary );
+    --video-title-font-family: var( --font-primary );
+
+    --blog-letter-spacing: 0;
+    --blog-font-size: 15px;
+    --blog-line-height: 28px;
+    --blog-font-weight: var( --regular );
+    --blog-color: var( --color-secondary );
+    --blog-font-family: var( --font-primary );
+
+    --blog-simple-title-letter-spacing: .85px;
+    --blog-simple-title-font-size: 28px;
+    --blog-simple-title-line-height: 39px;
+    --blog-simple-title-font-weight: var( --bold );
+    --blog-simple-title-color: var( --color-secondary );
+    --blog-simple-title-font-family: var( --font-primary );
+
+    --blog-title-letter-spacing: .85px;
+    --blog-title-font-size: 20px;
+    --blog-title-line-height: 39px;
+    --blog-title-font-weight: var( --bold );
+    --blog-title-color: var( --color-primary );
+    --blog-title-font-family: var( --font-primary );
+    --blog-categoria-letter-spacing: .83px;
+    --blog-categoria-font-size: 17px;
+    --blog-categoria-line-height: 13px;
+    --blog-categoria-font-weight: var( --bold );
+    --blog-categoria-color: var( --color-secondary );
+    --blog-categoria-font-family: var( --font-secondary );
+
+    --blog-blog-title-letter-spacing: 0;
+    --blog-blog-title-font-size: 16px;
+    --blog-blog-title-line-height: 20px;
+    --blog-blog-title-font-weight: var( --bold );
+    --blog-blog-title-color: var( --color-secondary );
+    --blog-blog-title-font-family: var( --font-primary );
+
+    --blog-categoria-title-letter-spacing: 0;
+    --blog-categoria-title-font-size: 15px;
+    --blog-categoria-title-line-height: 28px;
+    --blog-categoria-title-font-weight: var( --regular );
+    --blog-categoria-title-color: var( --color-primary );
+    --blog-categoria-title-font-family: var( --font-primary );
+
+    --menu-letter-spacing: 0;
+    --menu-font-size: 14px;
+    --menu-line-height: 30px;
+    --menu-font-weight: var( --regular );
+    --menu-color: var( --color-secondary );
+    --menu-font-family: var( --font-primary );
+    --menu-primary-letter-spacing: 0;
+    --menu-primary-font-size: 14px;
+    --menu-primary-line-height: 30px;
+    --menu-primary-font-weight: var( --regular );
+    --menu-primary-color: var( --color-secondary );
+    --menu-primary-font-family: var( --font-primary );
+
+    --producto-name-letter-spacing: 0;
+    --producto-name-font-size: 18px;
+    --producto-name-line-height: 20px;
+    --producto-name-font-weight: var( --semibold );
+    --producto-name-color: var( --color-secondary );
+    --producto-name-font-family: var( --font-primary );
+    --producto-subname-letter-spacing: .9px;
+    --producto-subname-font-size: 14px;
+    --producto-subname-line-height: 29px;
+    --producto-subname-font-weight: var( --regular );
+    --producto-subname-color: #131414;
+    --producto-subname-font-family: var( --font-primary );
+
+    --producto-caracteristicas-letter-spacing: 0;
+    --producto-caracteristicas-font-size: 16px;
+    --producto-caracteristicas-line-height: 20px;
+    --producto-caracteristicas-font-weight: var( --bold );
+    --producto-caracteristicas-color: var( --color-secondary );
+    --producto-caracteristicas-font-family: var( --font-primary );
+
+    --ficha-letter-spacing: 0;
+    --ficha-font-size: 15px;
+    --ficha-line-height: 28px;
+    --ficha-font-weight: var( --regular );
+    --ficha-color: var( --color-secondary );
+    --ficha-font-family: var( --font-primary );
+    --ficha-title-letter-spacing: 0;
+    --ficha-title-font-size: 16px;
+    --ficha-title-line-height: 20px;
+    --ficha-title-font-weight: var( --bold );
+    --ficha-title-color: var( --color-secondary );
+    --ficha-title-font-family: var( --font-primary );
+    --ficha-title-background: var( --color-primary );
+
+    --h4-title-letter-spacing: .9px;
+    --h4-title-font-size: 14px;
+    --h4-title-line-height: 29px;
+    --h4-title-font-weight: var( --regular );
+    --h4-title-color: #131414;
+    --h4-title-font-family: var( --font-primary );
+    
+    --h2-title-letter-spacing: .85px;
+    --h2-title-font-size: 40px;
+    --h2-title-line-height: 42px;
+    --h2-title-font-weight: var( --bold );
+    --h2-title-color: var( --color-secondary );
+    --h2-title-font-family: var( --font-primary );
+
+    --descargas-letter-spacing: .85px;
+    --descargas-font-size: 20px;
+    --descargas-line-height: 39px;
+    --descargas-font-weight: var( --bold );
+    --descargas-color: var( --color-secondary );
+    --descargas-font-family: var( --font-primary );
+    --descargas-btn-letter-spacing: .4px;
+    --descargas-btn-font-size: 14px;
+    --descargas-btn-line-height: 19px;
+    --descargas-btn-font-weight: var( --bold );
+    --descargas-btn-color: var( --white );
+    --descargas-btn-font-family: var( --font-primary );
+    --descargas-filtro-letter-spacing: .65px;
+    --descargas-filtro-font-size: 18px;
+    --descargas-filtro-line-height: 31px;
+    --descargas-filtro-font-weight: var( --bold );
+    --descargas-filtro-color: var( --color-secondary );
+    --descargas-filtro-font-family: var( --font-primary );
+}

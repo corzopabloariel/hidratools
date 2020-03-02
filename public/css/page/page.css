@@ -1,0 +1,108 @@
+body {
+	font-family: var( --font-montserrat );
+}
+@media (max-width: 575px) {
+    .col-12 + .col-12 {
+        margin-top: 1em;
+    }
+}
+@media ( max-width: 425px ) {
+    .carousel-caption .texto > *:not(:first-child) {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .collapse.dont-collapse-sm {
+        display: block;
+        height: auto !important;
+        visibility: visible;
+    }
+}
+.not-found {
+    width: 150px;
+}
+.new {
+    z-index: 111;
+    left: 1px;
+    top: -8px;
+}
+.slick-slide .new {
+    left: -13px;
+    top: -8px;
+}
+
+.menu-lateral *[aria-expanded="false"] .rotate-icon {
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+.menu-lateral *[aria-expanded="true"] .rotate-icon {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.menu-lateral .subcategorias.show *[aria-expanded="true"] {
+    font-weight: var( --bold );
+}
+.menu-lateral {
+    letter-spacing: var( --menu-letter-spacing );
+    font-size: var( --menu-font-size );
+    line-height: var( --menu-line-height );
+    font-weight: var( --menu-font-weight );
+    color: var( --menu-color );
+    font-family: var( --menu-font-family );
+}
+.menu-lateral h5 {
+    letter-spacing: var( --menu-primary-letter-spacing );
+    font-size: var( --menu-primary-font-size );
+    line-height: var( --menu-primary-line-height );
+    font-weight: var( --menu-primary-font-weight );
+    color: var( --menu-primary-color );
+    font-family: var( --menu-primary-font-family );
+    text-transform: initial;
+}
+.menu-lateral a {
+    color: inherit;
+    font: inherit;
+}
+.menu-lateral .accordion > .card .card-header {
+    z-index: 1;
+}
+.menu-lateral .subcategorias {
+    background-color: #F5F5F5;
+}
+.menu-lateral .partes a:hover {
+    color: var( --color-primary );
+}
+.menu-lateral .list-group {
+    font-size: inherit;
+    font-weight: inherit;
+}
+.menu-lateral .list-group .active {
+    color: var( --color-primary );
+}
+.menu-lateral .btn.btn-warning {
+    background: var( --color-primary );
+    border-color: var( --color-primary );
+}
+
+.zoom img {
+    cursor: zoom-in;
+}
+
+@media ( max-width: 768px ) {
+    .carousel-caption .texto {
+        width: 100% !important;
+    }
+}

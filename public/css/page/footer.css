@@ -1,0 +1,98 @@
+footer {
+    background: var( --footer-background );
+    font-family: var( --footer-font-family );
+    color: var( --footer-font-color );
+    font-size: var( --footer-font-size );
+    line-height: var( --footer-line-height );
+    letter-spacing: var( --footer-letter-spacing );
+    font-weight: var( --footer-font-weight );
+}
+footer a {
+    color: inherit;
+    font-size: inherit;
+}
+footer a:hover {
+    color: var( --color-primary );
+}
+footer .title {
+    color: var( --footer-title-font-color );
+    font-size: var( --footer-title-font-size );
+    line-height: var( --footer-title-line-height );
+    letter-spacing: var( --footer-title-letter-spacing );
+    font-weight: var( --footer-title-font-weight );
+}
+footer .logo {
+    width: 276px;
+    height: auto;
+}
+footer .menu {
+    -moz-column-count: 3;
+    -moz-column-gap: undefinedpx;
+    -webkit-column-count: 3;
+    -webkit-column-gap: undefinedpx;
+    column-count: 3;
+    column-gap: undefinedpx;
+}
+footer i {
+    color: var( --color-primary );
+    font-size: var( --footer-title-font-size );
+    line-height: var( --footer-title-line-height ) !important;
+    margin-right: .5em;
+}
+footer .fa-whatsapp {
+    color: #4DC95C !important;
+}
+footer a[href^="mailto:"],
+footer .social-networks a {
+    color: var( --color-primary );
+}
+footer hr {
+    border-color: #DFDFDF;
+}
+.by {
+    color: var( --osole-font-color );
+    font-size: var( --osole-font-size );
+    line-height: var( --osole-line-height );
+    letter-spacing: var( --osole-letter-spacing );
+    font-weight: var( --osole-font-weight );
+}
+
+@media (max-width: 991px) {
+    footer .menu {
+        -moz-column-count: 1;
+        -moz-column-gap: undefinedpx;
+        -webkit-column-count: 1;
+        -webkit-column-gap: undefinedpx;
+        column-count: 1;
+        column-gap: undefinedpx;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    footer .menu li + li {
+        margin-top: .6em;
+        margin-left: 1em;
+    }
+    footer .menu li {
+        margin-top: .6em;
+    }
+    footer .col-12 + .col-12 {
+        margin-top: 1.5em;
+    }
+
+    footer .order-o-1 {
+        order: 1;
+    }
+    footer .order-o-2 {
+        order: 2;
+    }
+    footer .order-o-3 {
+        order: 3;
+    }
+}
+@media (max-width: 425px) {
+    footer .logo {
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
+}
