@@ -15,7 +15,7 @@
     window.pyrusCaracteristica = new Pyrus( "producto_caracteristicas" , null , src );
     window.pyrusPlano = new Pyrus( "producto_planos" , null , src );
     window.pyrusAccesorio = new Pyrus( "producto_accesorios" , null , src );
-    
+
     addfinish = ( data = null ) => {
         if( data !== null ) {
             if( data.images !== null )
@@ -26,7 +26,8 @@
                 data.planos.forEach( ( x ) => { addPlano( null , x ) } );
             if( data.accesorios !== null )
                 data.accesorios.forEach( ( x ) => { addAccesorio( null , x ) } );
-        } else 
+            document.getElementById( "container-productos_text" ).innerHTML = data.text;
+        } else
             $( "#wrapper-images,#wrapper-caracteristicas,#wrapper-plano,#wrapper-accesorio" ).html( "" );
     };
     formSubmit = ( t ) => {
@@ -76,7 +77,7 @@
                 html += `<i style="line-height:14px; cursor: pointer; right: 0; top: 0; padding: 5px;border-radius: 0 0 0 .4em;" onclick="remove_( this , 'element' )" class="fas fa-times position-absolute text-white bg-danger"></i>`;
             html += '</div>';
         html += '</div>';
-    
+
         target.append(html);
         window.pyrusImages.editor( CKEDITOR , window[ `imagesCount` ] , "images" );
         window.pyrusImages.show( CKEDITOR , url_simple , value , window[ `imagesCount` ] , `images` );
@@ -92,7 +93,7 @@
                 html += `<i style="line-height:14px; cursor: pointer; right: 0; top: 0; padding: 5px;border-radius: 0 0 0 .4em;" onclick="remove_( this , 'element' )" class="fas fa-times position-absolute text-white bg-danger"></i>`;
             html += '</div>';
         html += '</div>';
-    
+
         target.append(html);
         window.pyrusAccesorio.editor( CKEDITOR , window[ `accesorioCount` ] , "accesorios" );
         window.pyrusAccesorio.show( CKEDITOR , url_simple , value , window[ `accesorioCount` ] , `accesorios` );
@@ -108,7 +109,6 @@
                 html += `<i style="line-height:14px; cursor: pointer; right: 0; top: 0; padding: 5px;border-radius: 0 0 0 .4em;" onclick="remove_( this , 'element' )" class="fas fa-times position-absolute text-white bg-danger"></i>`;
             html += '</div>';
         html += '</div>';
-    
         target.append(html);
         window.pyrusPlano.editor( CKEDITOR , window[ `planoCount` ] , "planos" );
         window.pyrusPlano.show( CKEDITOR , url_simple , value , window[ `planoCount` ] , `planos` );
@@ -124,10 +124,15 @@
                 html += `<i style="line-height:14px; cursor: pointer; right: 0; top: 0; padding: 5px;border-radius: 0 0 0 .4em;" onclick="remove_( this , 'element' )" class="fas fa-times position-absolute text-white bg-danger"></i>`;
             html += '</div>';
         html += '</div>';
-    
         target.append(html);
         window.pyrusCabecera.editor( CKEDITOR , window[ `cabeceraCount` ] , "cabecera" );
         window.pyrusCabecera.show( CKEDITOR , url_simple , value , window[ `cabeceraCount` ] , `cabecera` );
+    };
+    changeCkeditor = ( x , evt ) => {
+        let html = document.getElementById( `container-${evt.editor.name}` );
+        console.log(html)
+        if( html !== null )
+            html.innerHTML = evt.editor.getData();
     };
 
     init( () => {
@@ -146,7 +151,7 @@
         form += `</div>`;
         form += `<div class="row mt-0" id="wrapper-caracteristicas"></div>`;
         $( "#caracteristicas-target" ).html( form );
-        
+
         form = `<div class="row justify-content-center pt-3">`;
             form += `<div class="col-md-3 col-12">`;
                 form += `<button id="btnPlano" type="button" class="btn btn-block btn-dark text-center text-uppercase" onclick="addPlano( this )">Plano<i class="fas fa-plus ml-2"></i></button>`;

@@ -333,7 +333,6 @@ const ENTIDADES = {
             is_destacado: {TIPO:"TP_CHECK",VISIBILIDAD:"TP_VISIBLE",CHECK:"¿Producto destacado?",NOMBRE:"Destacado",OPTION:{ "" : "NO" , true : "Si"}},
             youtube: {TIPO:"TP_YOUTUBE",LABEL:1,MAXLENGTH:20,VISIBILIDAD:"TP_VISIBLE",CLASS:"border-left-0 border-right-0 border-top-0 rounded-0",NOMBRE:"Código de Youtube",HELP:"Código: https://www.youtube.com/watch?v=<strong>XXXXXXXXXXX</strong>"}
         },
-        
         FORM: [
             {
                 '<div class="col-12" id="images-target"></div>': ['VACIO']
@@ -348,7 +347,10 @@ const ENTIDADES = {
                 '<div class="col-12">/utilidad/</div><div class="col-12 mt-3" id="caracteristicas-target"></div>': ['utilidad']
             },
             {
-                '<div class="col-12">/text/</div><div class="col-12 mt-3" id="planos-target"></div><div class="col-12 mt-3" id="accesorios-target"></div>': ['text']
+                '<div class="col-12 mb-2 bg-light wrapper-productos"><div class="ficha" id="container-productos_text"></div></div><div class="col-12 border-top pt-2">/text/</div>':['text']
+            },
+            {
+                '<div class="col-12" id="planos-target"></div><div class="col-12 mt-3" id="accesorios-target"></div>': ['VACIO']
             }
         ],
         EDITOR: {

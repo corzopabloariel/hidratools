@@ -56,7 +56,6 @@ class GeneralController extends Controller
         $data = self::datos( $link );
         if( empty( $link ) )
             $link = "home";
-        
         $data[ "view" ] = "page.{$link}";
         switch( $link ) {
             case "home":
