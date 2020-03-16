@@ -21,7 +21,7 @@ if( isset( $pedido ) )
                         if( $categoria->id == $data[ 'categoria' ]->id )
                             $aria_expanded = "aria-expanded=true";
                     }
-                    $url_categoria = URL::to( 'productos/' . str_slug( $categoria->title ) . '/' . $categoria->id );
+                    $url_categoria = URL::to( 'productos/' . str_slug( $categoria->title ) );
                     @endphp
                     <h5 class="mb-0 parte d-flex justify-content-between align-items-center pb-2" data-parent="#accordionEx" data-toggle="collapse" data-target="#productos{{ $categoria->id }}" {{ $aria_expanded }} aria-controls="productos{{ $categoria->id }}">
                         <a href="{{ $url_categoria }}">
@@ -56,7 +56,7 @@ if( isset( $pedido ) )
                                             if( $subcategoria->id == $data[ 'subcategoria' ]->id )
                                                 $aria_expanded = "aria-expanded=true";
                                         }
-                                        $url_categoria = URL::to( 'productos/' . str_slug( $categoria->title ) . '/' . $categoria->id . '/' . str_slug( $subcategoria->title ) . '/' . $subcategoria->id );
+                                        $url_categoria = URL::to( 'productos/' . str_slug( $categoria->title ) . '/' . str_slug( $subcategoria->title ) );
                                         @endphp
                                         <h5 class="mb-0 parte d-flex justify-content-between border-bottom-0 align-items-center pb-2" data-parent="#accordionEx2" data-toggle="collapse" data-target="#productos{{ $subcategoria->id }}" {{ $aria_expanded }} aria-controls="productos{{ $subcategoria->id }}">
                                             <a href="{{ $url_categoria }}">
@@ -84,7 +84,7 @@ if( isset( $pedido ) )
                                                                 if( $producto->id == $data[ "producto" ]->id )
                                                                     $class .= " active";
                                                             }
-                                                            $url_producto = URL::to( 'producto/' . str_slug( $producto->title ) . '/' . $producto->id );
+                                                            $url_producto = URL::to( 'producto/' . str_slug( $producto->title ) );
                                                             @endphp
                                                             <li class="list-group-item bg-transparent border-0 py-2">
                                                                 <a class="{{ $class }}" href="{{ $url_producto }}">{{ $producto->title }}</a>
@@ -105,7 +105,7 @@ if( isset( $pedido ) )
                                                             if( $producto->id == $data[ "producto" ]->id )
                                                                 $class .= " active";
                                                         }
-                                                        $url_producto = URL::to( 'producto/' . str_slug( $producto->title ) . '/' . $producto->id );
+                                                        $url_producto = URL::to( 'producto/' . str_slug( $producto->title ) );
                                                         @endphp
                                                         <li class="list-group-item bg-transparent border-0 py-2">
                                                             <a class="{{ $class }}" href="{{ $url_producto }}">{{ $producto->title }}</a>

@@ -52,7 +52,7 @@
     --servicio-title-font-size: 16px;
     --servicio-title-line-height: 20px;
     --servicio-title-font-weight: var( --bold );
-    --servicio-title-color: var( --white );
+    --servicio-title-color: var( --color-secondary );
     --servicio-title-font-family: var( --font-primary );
     --servicio-title-background: var( --color-primary );
 

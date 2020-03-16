@@ -105,21 +105,23 @@ class GeneralController extends Controller
         return view( 'layouts.main' ,compact( 'data' ) );
     }
 
-    public function producto( $title , $id ) {
+    public function producto( $title ) {
         $data = self::datos( "productos" );
-        $data[ "producto" ] = Producto::find( $id );
+        $data[ "producto" ] = Producto::where( "slug" , $title )->first();
         $data[ "subcategoria" ] = $data[ "producto" ]->categoria;
         $data[ "categoria" ] = $data[ "subcategoria" ]->categoria;
         $data[ "view" ] = "page.producto";
         $data[ "categorias" ] = Categoria::where( "elim" , 0 )->whereNull( "categoria_id" )->orderBy( "order" )->get();
         $data[ "cabecera" ] = Contenido::where( "section" , "header_productos" )->first();
-        $data[ "title" ] = "Producto - {$data["producto"]->title}";
+        $data[ "title" ] = "{$data["subcategoria"]->title} - {$data["categoria"]->title} - {$data["producto"]->title} :: Hidratools S.A.";
+        if(strcmp($data["subcategoria"]->title,$data["categoria"]->title) === 0)
+            $data[ "title" ] = "{$data["subcategoria"]->title} - {$data["producto"]->title} :: Hidratools S.A.";
         return view( 'layouts.main' ,compact( 'data' ) );
     }
 
-    public function subcategoria( $ntitle , $nid , $title , $id ) {
+    public function subcategoria( $ntitle , $title ) {
         $data = self::datos( "productos" );
-        $data[ "subcategoria" ] = Categoria::find( $id );
+        $data[ "subcategoria" ] = Categoria::where( "slug", $title )->first();
         $data[ "categoria" ] = $data[ "subcategoria" ]->categoria;
         $aux = $data[ "subcategoria" ]->productos()->where( "elim" , 0 );
         if( $aux->count() == 1 ) {
@@ -131,18 +133,18 @@ class GeneralController extends Controller
         $data[ "categorias" ] = Categoria::where( "elim" , 0 )->whereNull( "categoria_id" )->orderBy( "order" )->get();
         $data[ "productos" ] = $data[ "subcategoria" ]->productos()->where( "elim" , 0 )->orderBy( "order" )->paginate( 15 );
         $data[ "cabecera" ] = Contenido::where( "section" , "header_productos" )->first();
-        $data[ "title" ] = "Productos - {$data["categoria"]->title} / {$data["subcategoria"]->title}";
+        $data[ "title" ] = "{$data["subcategoria"]->title} - {$data["categoria"]->title} :: Hidratools S.A.";
         return view( 'layouts.main' ,compact( 'data' ) );
     }
 
-    public function categoria( $title , $id ) {
+    public function categoria( $title ) {
         $data = self::datos( "productos" );
-        $data[ "categoria" ] = Categoria::find( $id );
+        $data[ "categoria" ] = Categoria::where( "slug",$title )->first();
         $data[ "view" ] = "page.categoria";
         $data[ "categorias" ] = Categoria::where( "elim" , 0 )->whereNull( "categoria_id" )->orderBy( "order" )->get();
         $data[ "subcategorias" ] = $data[ "categoria" ]->categorias()->where( "elim" , 0 )->orderBy( "order" )->paginate( 15 );
         $data[ "cabecera" ] = Contenido::where( "section" , "header_productos" )->first();
-        $data[ "title" ] = "Productos - {$data["categoria"]->title}";
+        $data[ "title" ] = "{$data["categoria"]->title} :: Hidratools S.A.";
         return view( 'layouts.main' ,compact( 'data' ) );
     }
 

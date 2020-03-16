@@ -10,6 +10,7 @@ class Producto extends Model
         'images',
         'order',
         'title',
+        'slug',
         'subtitle',
         'descripcion',
         'manual',
@@ -29,6 +30,7 @@ class Producto extends Model
     protected $casts = [
         'images'          => 'json',
         'order'           => 'string',
+        'slug'           => 'string',
         'title'           => 'string',
         'subtitle'        => 'string',
         'descripcion'     => 'string',

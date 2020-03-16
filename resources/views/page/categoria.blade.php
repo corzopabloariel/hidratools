@@ -18,7 +18,7 @@
                             @php
                             $producto = $subcategoria->productos()->first();
                             @endphp
-                            <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) . '/' . $producto->id ) }}" class="d-block plus">
+                            <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) ) }}" class="d-block plus">
                                 @if( $producto->is_nuevo )
                                     @include( 'layouts.general.image' , [ 'i' => "images/new.png" , 'c' => 'position-absolute new' , 'n' => 'Nuevo producto - ' . $producto->title ] )
                                 @endif
@@ -28,7 +28,7 @@
                                 <p class="name">{{ $producto->title }}</p>
                             </a>
                             @else
-                            <a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/' . $data[ 'categoria' ]->id . '/'. str_slug( $subcategoria->title ) . '/' . $subcategoria->id ) }}" class="d-block plus">
+                            <a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/'. str_slug( $subcategoria->title ) ) }}" class="d-block plus">
                                 <div class="img">
                                     @include( 'layouts.general.image' , [ 'i' => $subcategoria->image , 'c' => 'd-block w-100 mb-2' , 'n' => $subcategoria->title ] )
                                 </div>

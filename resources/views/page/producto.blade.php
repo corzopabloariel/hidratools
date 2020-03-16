@@ -77,10 +77,10 @@
         <ol class="breadcrumb bg-transparent border-0 p-0">
             <li class="breadcrumb-item home"><a href="{{ URL::to( '/' ) }}"><i class="fas fa-home"></i></a></li>
             <li class="breadcrumb-item"><a href="{{ URL::to( 'productos' ) }}">Productos</a></li>
-            <li class="breadcrumb-item breadcrumb-name"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/' . $data[ 'categoria' ]->id ) }}">{{ $data[ 'categoria' ]->title }}</a></li>
+            <li class="breadcrumb-item breadcrumb-name"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) ) }}">{{ $data[ 'categoria' ]->title }}</a></li>
             @if( isset( $data[ 'subcategoria' ] ) )
                 @if( strcasecmp( $data[ 'subcategoria' ]->title , $data[ 'producto' ]->title ) != 0 )
-                <li class="breadcrumb-item breadcrumb-name"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/' . $data[ 'categoria' ]->id . '/' . str_slug( $data[ 'subcategoria' ]->title ) . '/' . $data[ 'subcategoria' ]->id ) }}">{{ $data[ 'subcategoria' ]->title }}</a></li>
+                <li class="breadcrumb-item breadcrumb-name"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/' . str_slug( $data[ 'subcategoria' ]->title ) ) }}">{{ $data[ 'subcategoria' ]->title }}</a></li>
                 @endif
             @endif
             <li class="breadcrumb-item breadcrumb-name active" aria-current="page">{{ $data[ 'producto' ]->title }}</li>

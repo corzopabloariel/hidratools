@@ -20,6 +20,13 @@ class CategoriaController extends Controller
      */
     public function index( )
     {
+        /*$aaa = $this->model->all();
+        foreach($aaa AS $a) {
+            $a->fill([
+                "slug" => str_slug($a->title)
+            ]);
+            $a->save();
+        }*/
         $data = [];
         $data[ "view" ] = "auth.parts.categoria";
         
@@ -48,7 +55,7 @@ class CategoriaController extends Controller
     {
         //try {
             $OBJ = (new AdmController)->object( $request , $data );
-            //dd($OBJ);
+            $OBJ["slug"] = str_slug($OBJ["title"]);
             if(is_null($data)) {
                 $this->model::create($OBJ);
                 echo 1;

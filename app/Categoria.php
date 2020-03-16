@@ -10,6 +10,7 @@ class Categoria extends Model
         'order',
         'logo',
         'resume',
+        'slug',
         'title',
         'subtitle',
         'image',
@@ -20,6 +21,7 @@ class Categoria extends Model
     
     protected $casts = [
         'order'        => 'string',
+        'slug'        => 'string',
         'logo'         => 'array',
         'resume'       => 'string',
         'title'        => 'string',

@@ -5,7 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{{ $data['metadato']['description'] }}"/>
         <meta name=”keywords” content="{{ $data['metadato']['keywords'] }}"/>
-        <title>@yield( 'headTitle' , config( 'app.name' ) . ' :: ' . $data[ 'title' ] )</title>
+        @php
+        $t = config( 'app.name' );
+        if( strpos($data[ 'title' ],$t) !== false )
+            $t = $data[ 'title' ];
+        else
+            $t .= ' :: ' . $data[ 'title' ];
+        @endphp
+        <title>@yield( 'headTitle' , $t )</title>
         @if( !empty( $data[ "empresa" ][ "images" ][ "favicon" ] ) )
             @switch( $data[ "empresa" ][ "images" ][ "favicon" ][ "i" ] )
                 @case("png")
@@ -29,6 +36,23 @@
         <link href="{{ asset('css/page/footer.css') }}" rel="stylesheet">
         @stack( 'styles' )
         <!-- </Styles> -->
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '166936041420899');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=166936041420899&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->  
     </head>
     <body>
         <div class="modal fade bd-example-modal-lg" id="terminosModal" tabindex="-1" role="dialog" aria-hidden="true">

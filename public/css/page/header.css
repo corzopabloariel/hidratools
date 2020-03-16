@@ -37,8 +37,8 @@ header nav > .container > div {
 header .btn.btn-outline-success.whatsapp {
     font-weight: bold;
     color: var( --white );
-    background: var( --color-primary );
-    border-color: var( --color-primary );
+    background: #4DC95C !important;
+    border-color: #4DC95C !important;
 }
 header .btn.btn-outline-success.whatsapp:hover {
     color: var( --white );

@@ -21,9 +21,9 @@ Route::get('servicio/{title}/{id}', ['uses' => 'Page\GeneralController@servicio'
 Route::get('servicio/{title}/{id}/consulta', ['uses' => 'Page\GeneralController@consulta2' , 'as' => 'consulta2']);
 Route::get('blog/{title}/{id}', ['uses' => 'Page\GeneralController@blog' , 'as' => 'blog']);
 Route::get('blogs/{slug_category}/{id}', ['uses' => 'Page\GeneralController@blog_category' , 'as' => 'blog_category']);
-Route::get('productos/{title}/{id}', ['uses' => 'Page\GeneralController@categoria' , 'as' => 'categoria']);
-Route::get('productos/{ntitle}/{nid}/{title}/{id}', ['uses' => 'Page\GeneralController@subcategoria' , 'as' => 'subcategoria']);
-Route::get('producto/{title}/{id}', ['uses' => 'Page\GeneralController@producto' , 'as' => 'producto']);
+Route::get('productos/{title}/', ['uses' => 'Page\GeneralController@categoria' , 'as' => 'categoria']);
+Route::get('productos/{ntitle}/{title}', ['uses' => 'Page\GeneralController@subcategoria' , 'as' => 'subcategoria']);
+Route::get('producto/{title}', ['uses' => 'Page\GeneralController@producto' , 'as' => 'producto']);
 
 Route::post('contacto', ['uses' => 'Page\FormController@contacto', 'as' => 'contacto']);
 Route::post('presupuesto', ['uses' => 'Page\FormController@presupuesto', 'as' => 'presupuesto']);
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'], function() {
     Route::get('empresa/imagen', ['uses' => 'Auth\AdmController@imagen', 'as' => 'imagen']);
     Route::delete('imagen/delete', ['uses' => 'Auth\AdmController@imagenDestroy', 'as' => 'imagen.delete']);
     Route::post('imagen', ['uses' => 'Auth\AdmController@imagenStore', 'as' => 'imagen.create']);
-    
+
     Route::get('cabeceras', ['uses' => 'Auth\CabecerasController@index', 'as' => 'cabeceras.index']);
     Route::get('cabeceras/update/{table}', ['uses' => 'Auth\CabecerasController@update', 'as' => 'cabeceras.update']);
     /**

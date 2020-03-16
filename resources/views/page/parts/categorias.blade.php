@@ -11,7 +11,7 @@
                 @php
                 $href = "#";
                 if( $link )
-                    $href = URL::to( 'productos/' . str_slug( $c->title ) . '/' . $c->id );
+                    $href = URL::to( 'productos/' . str_slug( $c->title ) );
                 @endphp
                 <a href="{{ $href }}" class="d-block position-relative categoria plus">
                     <div class="img">

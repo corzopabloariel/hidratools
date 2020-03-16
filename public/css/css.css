@@ -949,7 +949,7 @@ dl, ol, ul {
     -webkit-print-color-adjust: exact; 
 }
 .page-header, .page-header-space {
-    height: 93px;
+    height: 163px;
 } 
 .page-footer, .page-footer-space {
     height: 70px;
@@ -977,6 +977,7 @@ dl, ol, ul {
 @media print {
     body {
         background: #fff;
+        padding-top: 80px;
     }
     .wrapper-productos .container {
         width: 100%;
@@ -985,6 +986,13 @@ dl, ol, ul {
     .page-header,
     .page-footer {
         display: block;
+    }
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+    .pagebreak + * {
+        padding-top: 70px;
     }
     header,
     footer,
@@ -1007,4 +1015,4 @@ dl, ol, ul {
         flex: 0 0 100%;
         max-width: 100%;
     }
-} 
+}

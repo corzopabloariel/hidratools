@@ -300,7 +300,6 @@ const ENTIDADES = {
             order: {TIPO:"TP_ENTERO",MAXLENGTH:2,NECESARIO:1,VISIBILIDAD:"TP_VISIBLE",NOMBRE:"orden",CLASS:"border-left-0 border-right-0 bg-transparent border-top-0 rounded-0",SIMPLE:1},
             image: {TIPO:"TP_IMAGE",FOLDER:"blog",NECESARIO:1,VALID:"Archivo seleccionado",INVALID:"Archivo - 762px X 425px",BROWSER:"",VISIBILIDAD:"TP_VISIBLE",ACCEPT:"image/*",NOMBRE:"imagen",WIDTH:"762px"},
         },
-        
         FORM: [
             {
                 '<div class="col-12 col-md">/order/</div>':['order']
@@ -504,7 +503,6 @@ const ENTIDADES = {
             order: {TIPO:"TP_STRING",LABEL:1,MAXLENGTH:3,VISIBILIDAD:"TP_VISIBLE",CLASS:"text-uppercase text-center border-left-0 border-right-0 border-top-0 rounded-0",WIDTH:"70px",NOMBRE:"orden"},
             title: {TIPO:"TP_STRING",LABEL:1,MAXLENGTH:150,VISIBILIDAD:"TP_VISIBLE",CLASS:"border-left-0 border-right-0 border-top-0 rounded-0",NOMBRE:"título"},
         },
-        
         FORM: [
             {
                 '<div class="col-12 col-md-4">/order/</div><div class="col-12 col-md">/title/</div>': ['title','order']

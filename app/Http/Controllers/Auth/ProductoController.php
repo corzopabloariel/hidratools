@@ -21,6 +21,13 @@ class ProductoController extends Controller
      */
     public function index( Request $request )
     {
+        /*$aaa = $this->model->all();
+        foreach($aaa AS $a) {
+            $a->fill([
+                "slug" => str_slug($a->title)
+            ]);
+            $a->save();
+        }*/
         $dataRequest = $request->all();
         $data = [];
         $data[ "view" ] = "auth.parts.producto";

@@ -4,7 +4,7 @@
         <ol class="breadcrumb bg-transparent border-0 p-0">
             <li class="breadcrumb-item home"><a href="{{ URL::to( '/' ) }}"><i class="fas fa-home"></i></a></li>
             <li class="breadcrumb-item"><a href="{{ URL::to( 'productos' ) }}">Productos</a></li>
-            <li class="breadcrumb-item"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) . '/' . $data[ 'categoria' ]->id ) }}">{{ $data[ 'categoria' ]->title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ URL::to( 'productos/' . str_slug( $data[ 'categoria' ]->title ) ) }}">{{ $data[ 'categoria' ]->title }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $data[ 'subcategoria' ]->title }}</li>
         </ol>
         <div class="row mt-5">
@@ -15,7 +15,7 @@
                 <div class="row mt-n4">
                     @foreach( $data[ "productos" ] AS $producto )
                         <div class="col-12 col-md-4 mt-4 hover">
-                            <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) . '/' . $producto->id ) }}" class="d-block plus">
+                            <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) ) }}" class="d-block plus">
                                 @if( $producto->is_nuevo )
                                     @include( 'layouts.general.image' , [ 'i' => "images/new.png" , 'c' => 'position-absolute new' , 'n' => 'Nuevo producto - ' . $producto->title ] )
                                 @endif
