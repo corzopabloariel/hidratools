@@ -14,6 +14,7 @@ use App\Blog_categorias;
 use App\Servicio;
 use App\Categoria;
 use App\Producto;
+use App\Popup;
 use App\Descarga;
 class GeneralController extends Controller
 {
@@ -24,7 +25,7 @@ class GeneralController extends Controller
         $whatsapp = $telefono = $telefonoHeader = [];
         if( empty( $link ) )
             $link = "home";
-        
+
         for( $i = 0 ; $i < count( $datos->phone ) ; $i++ ) {
             if( $datos->phone[ $i ][ "tipo" ] == "wha" )
                 $whatsapp[] = $datos->phone[ $i ];
@@ -40,6 +41,7 @@ class GeneralController extends Controller
             "cabecera" => Contenido::where( "section" , "header_{$link}" )->first(),
             "slider" => Slider::where( "section" , $link )->where( "elim" , 0 )->orderBy( "order" )->get(),
             "terminos" => Contenido::where( "section" , "terminos" )->first(),
+            "popup" => Popup::where( "section" , $link )->where( "elim" , 0 )->where( "active" , 1 )->first(),
             "metadato" => [
                 "description" => "",
                 "keywords" => ""
@@ -83,6 +85,21 @@ class GeneralController extends Controller
         }
 
         return view( 'layouts.main' ,compact( 'data' ) );
+    }
+
+    public function buscar(Request $request)
+    {
+        $dataRequest = $request->all();
+        $link = "productos";
+        $data = self::datos( $link );
+        $data[ "view" ] = "page.search";
+        if( !empty( $dataRequest[ "search" ] ) ) {
+            $data[ "search" ] = $dataRequest[ "search" ];
+            $data[ "productos" ] = Producto::where( "elim" , 0 )->whereRaw( "UPPER(CONCAT_WS( ' ' ,`title`, `subtitle`, `descripcion`,`utilidad`,`caracteristicas`,`text`,`accesorios`)) LIKE UPPER('%{$dataRequest[ "search" ]}%')" )->paginate( 30 );
+            return view( 'layouts.main' ,compact( 'data' ) );
+        }
+
+        return back();
     }
 
     public function consulta2( $title , $id ) {

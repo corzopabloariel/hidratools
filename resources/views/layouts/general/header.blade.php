@@ -1,5 +1,5 @@
 @php
-$social_networks = [ 
+$social_networks = [
     'instagram' => '<i class="fab fa-instagram"></i>',
     'linkedin' => '<i class="fab fa-linkedin-in"></i>',
     'youtube' => '<i class="fab fa-youtube"></i>',
@@ -8,6 +8,27 @@ $social_networks = [
     'pinterest' => '<i class="fab fa-pinterest-p"></i>'
 ];
 @endphp
+<div class="modal fade" id="search__modal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title" id="exampleModalLabel">Buscador general</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ URL::to('buscar') }}" class="wrapper-contacto" method="get">
+                <div class="modal-body">
+                    <p class="mb-3">Buscar productos por título, descripción o contenido en general</p>
+                    <input required pattern=".{3,}" @if(!empty($data['search'])) value="{{$data['search']}}" @endif placeholder="Buscar productos por título, descripción o contenido en general" type="search" name="search" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning px-4 rounded-pill">Buscar<i class="fas fa-angle-right ml-2"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <header class="bg-transparent">
     <div class="container position-relative" style="min-height: 102px;">
         @php
@@ -84,7 +105,6 @@ $social_networks = [
                     <div>
                         <a class="{{ $class }}" href="{{ URL::to( 'cliente/descargas' ) }}"><span>Descargas</span></a>
                     </div>
-
                     @php
                     $flag = false;
                     $class = "d-block p-3";
@@ -114,6 +134,9 @@ $social_networks = [
                         </div>
                         @endif
                     @endforeach
+                    <div>
+                        <a href="#" data-toggle="modal" data-target="#search__modal"><i class="fas fa-search"></i></a>
+                    </div>
                 </div>
                 @endif
             </div>

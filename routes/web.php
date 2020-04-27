@@ -24,10 +24,12 @@ Route::get('blogs/{slug_category}/{id}', ['uses' => 'Page\GeneralController@blog
 Route::get('productos/{title}/', ['uses' => 'Page\GeneralController@categoria' , 'as' => 'categoria']);
 Route::get('productos/{ntitle}/{title}', ['uses' => 'Page\GeneralController@subcategoria' , 'as' => 'subcategoria']);
 Route::get('producto/{title}', ['uses' => 'Page\GeneralController@producto' , 'as' => 'producto']);
+Route::get('buscar', ['uses' => 'Page\GeneralController@buscar' , 'as' => 'buscar']);
 
+Route::post('consulta/{title}/{id}/{index?}/{name?}', ['uses' => 'Page\FormController@contacto' , 'as' => 'consulta']);
 Route::post('contacto', ['uses' => 'Page\FormController@contacto', 'as' => 'contacto']);
 Route::post('presupuesto', ['uses' => 'Page\FormController@presupuesto', 'as' => 'presupuesto']);
-Route::post('producto/{title}/{id}', ['uses' => 'Page\FormController@presupuesto' , 'as' => 'producto']);
+Route::post('producto/{title}', ['uses' => 'Page\FormController@presupuesto' , 'as' => 'producto']);
 Auth::routes();
 
 Route::get('salir', 'PrivateArea\LoginController@salir')->name('salir');
@@ -66,6 +68,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'], function() {
         Route::get('{seccion}/edit', ['uses' => 'Auth\ContenidoController@edit', 'as' => '.edit']);
         Route::post('{seccion}/update', ['uses' => 'Auth\ContenidoController@update', 'as' => 'update']);
     });
+    /**
+     * POPUP
+     */
+    Route::resource('popups', 'Auth\PopupController')->except(['update']);
+    Route::post('popups/update/{id}', ['uses' => 'Auth\PopupController@update', 'as' => 'popups.update']);
     /**
      * SERVICIOS
      */

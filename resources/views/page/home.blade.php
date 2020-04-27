@@ -7,7 +7,7 @@
             <div class="mt-n4" id="productos-slick">
                 @foreach( $data[ "productos" ] AS $producto )
                     <div class="mt-4 hover p-3">
-                        <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) . '/' . $producto->id ) }}" class="d-block plus position-relative">
+                        <a href="{{ URL::to( 'producto/' . str_slug( $producto->title ) ) }}" class="d-block plus position-relative">
                             @if( !empty( $producto->is_nuevo ) )
                                 @include( 'layouts.general.image' , [ 'i' => "images/new.png" , 'c' => 'position-absolute new' , 'n' => 'Nuevo producto - ' . $producto->title ] )
                             @endif
@@ -21,7 +21,7 @@
                 @endforeach
                 @foreach( $data[ "categoriasD" ] AS $producto )
                     <div class="mt-4 hover p-3">
-                        <a href="{{ URL::to( 'productos/' . str_slug( $producto->categoria->title ) . '/' . $producto->categoria->id . '/' . str_slug( $producto->title ) . '/' . $producto->id ) }}" class="d-block plus">
+                        <a href="{{ URL::to( 'productos/' . str_slug( $producto->categoria->title ) . '/' . str_slug( $producto->title ) ) }}" class="d-block plus">
                             <div class="img">
                                 @include( 'layouts.general.image' , [ 'i' => $producto->image , 'c' => 'img-producto w-100' , 'n' => $producto->title , 'in_div' => 1 ] )
                             </div>

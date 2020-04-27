@@ -313,6 +313,26 @@ const ENTIDADES = {
         }
     },
 
+    popup: {
+        TABLE: "popups",
+        ATRIBUTOS: {
+            section: {TIPO:"TP_STRING",LABEL:1,MAXLENGTH:20,VISIBILIDAD:"TP_INVISIBLE",DEFAULT:"home"},
+            image: {TIPO:"TP_IMAGE",FOLDER:"popup",NECESARIO:1,VALID:"Archivo seleccionado",INVALID:"Archivo",BROWSER:"",VISIBILIDAD:"TP_VISIBLE",ACCEPT:"image/*",NOMBRE:"imagen",WIDTH:"762px"},
+            active: {TIPO:"TP_CHECK",VISIBILIDAD:"TP_VISIBLE",CHECK:"¿Pop up Activo?",NOMBRE:"Activo",OPTION:{ false : "NO" , true : "Si"}}
+        },
+        FORM: [
+            {
+                '<div class="col-12 col-md-4">/section//active/</div>':['active','section']
+            },
+            {
+                '<div class="col-12">/image/</div>':['image'],
+            },
+        ],
+        FUNCIONES: {
+            image: {onchange:{F:"readURL(this,'/id/')",C:"id"}}
+        }
+    },
+
     /**********************************
             PRODUCTOS
      ********************************** */

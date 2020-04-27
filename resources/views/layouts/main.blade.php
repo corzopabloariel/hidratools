@@ -52,9 +52,25 @@
         <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=166936041420899&ev=PageView&noscript=1"
         /></noscript>
-        <!-- End Facebook Pixel Code -->  
+        <!-- End Facebook Pixel Code -->
     </head>
+    <style>
+    .modal-backdrop {
+        z-index: -1;
+    }
+    </style>
     <body>
+        @if(!empty($data["popup"]))
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal--popup" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content border-0 shadow">
+                    <div class="modal-body p-0 border-0">
+                        @include( 'layouts.general.image' , [ 'i' => $data["popup"]->image , 'n' => "Pop up" , 'c' => 'w-100' ] )
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="modal fade bd-example-modal-lg" id="terminosModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -113,6 +129,7 @@
                         <li class="list-group-item border-0 bg-transparent"><a @if( $flag ) class="active" @endif href="{{ URL::to( $s[ 'LINK' ] ) }}">{{ $s[ 'NAME' ] }}</a></li>
                     @endforeach
                 @endif
+                <li class="list-group-item border-0 bg-transparent"><a href="#" data-toggle="modal" data-target="#search__modal">Buscar</a></li>
                 </ul>
             </div>
         </div>
@@ -152,6 +169,12 @@
             window.url = "{{ url()->current() }}";
             window.url_base = "{{ URL::to( '/' ) }}";
             $( () => {
+                if ($("#modal--popup").length)
+                    $("#modal--popup").modal("show");
+                $('#search__modal').on('shown.bs.modal', function (e) {
+                    if(window.typeMENU !== undefined)
+                        menuBody(null);
+                });
                 $( ".carousel-caption .texto" ).css( {
                     marginTop: $("header").height()
                 } );

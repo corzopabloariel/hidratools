@@ -92,6 +92,13 @@ define( 'MENU' ,
         'separar' => 1
     ],
     [
+        "id"        => "popup",
+        "nombre"    => "Pop up",
+        "icono"     => '<i class="fas fa-chalkboard"></i>',
+        "url"       => route('popups.index'),
+        "ok"        => 1
+    ],
+    [
         "id"        => "descargas",
         "nombre"    => "Descargas",
         "icono"     => '<i class="fas fa-arrow-alt-circle-down"></i>',
