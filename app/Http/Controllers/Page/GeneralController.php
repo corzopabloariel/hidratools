@@ -144,7 +144,7 @@ class GeneralController extends Controller
         if( $aux->count() == 1 ) {
             $aux = $aux->first();
             if( $aux->title == $data[ "subcategoria" ]->title )
-                return self::producto( null , $aux->id );
+                return self::producto( $aux->slug );
         }
         $data[ "view" ] = "page.subcategoria";
         $data[ "categorias" ] = Categoria::where( "elim" , 0 )->whereNull( "categoria_id" )->orderBy( "order" )->get();

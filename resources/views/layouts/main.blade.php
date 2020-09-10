@@ -61,8 +61,8 @@
     </style>
     <body>
         @if(!empty($data["popup"]))
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal--popup" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal--popup" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content border-0 shadow">
                     <div class="modal-body p-0 border-0">
                         @include( 'layouts.general.image' , [ 'i' => $data["popup"]->image , 'n' => "Pop up" , 'c' => 'w-100' ] )
